@@ -24,4 +24,4 @@ SELECT app_name FROM analytics WHERE app_name ILIKE '&facebook&';
 -- FS3. Find all the apps that have more than 1 genre.
 SELECT app_name FROM analytics WHERE array_length(genres, 1) > 1;
 -- FS4. Find all the apps that have education as one of their genres.
-SELECT app_name FROM analytics WHERE genres && '{"education"}' = true;
+SELECT app_name FROM analytics WHERE genres && ARRAY['Education'] = true;
